@@ -1,7 +1,7 @@
 #!/bin/ash
 #Petit script pour installer Tailscale facilement en semi auto
 #
-#zf230322.1928, zf230327.1800
+#zf230322.1928, zf230327.1821
 
 echo ""
 read -p "Attention il faut se trouver dans le dossier 'tailscale' !"
@@ -10,9 +10,7 @@ echo ""
 
 opkg install kmod-tun iptables-nft
 
-rm /usr/sbin/tailscalecp -r ./etc/ /
-
-rm -f /usr/sbin/tailscale
+cp -r ./etc/ /
 
 mkdir bin
 cd bin
@@ -40,9 +38,6 @@ Voila, c'est tout fait !
 
 
 exit
-
-
-
 
 
 echo 'net.ipv4.ip_forward = 1' | sudo tee /etc/sysctl.d/99-tailscale.conf
