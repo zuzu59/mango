@@ -1,8 +1,6 @@
-# mango
-# Mes petits utilitaires sympa pour le mini routeur MANGO
-# ESC+# pour cacher les numéros de lignes sous nano !
+# mango Mes petits utilitaires sympa pour le mini routeur MANGO ESC+# pour cacher les numéros de lignes sous nano !
 
-zf230327.1716
+zf230327.1846
 
 # Installation minimaliste et super rapide
 On récupère le fichier d'installation dans la RAM et on l'exécute
@@ -38,5 +36,19 @@ cd mango
 
 source ./alias
 ash ./env_git_a_zuzu.sh
+```
+
+# Installation juste du dépôt sans le GIT
+
+```
+cd /mnt/sda1
+rm -rf toto
+mkdir toto
+cd toto
+
+wget https://github.com/zuzu59/mango/archive/refs/heads/master.zip -O ./mango.zip
+unzip mango.zip
+rm -rf mango-master/
+mv mango-master/ mango
 ```
 
