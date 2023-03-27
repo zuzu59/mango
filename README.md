@@ -1,7 +1,8 @@
 # mango
-Mes petits utilitaires sympa pour le mini routeur MANGO
+# Mes petits utilitaires sympa pour le mini routeur MANGO
+# ESC+# pour cacher les numéros de lignes sous nano !
 
-zf230327.1700
+zf230327.1716
 
 # Installation minimaliste et super rapide
 On récupère le fichier d'installation dans la RAM et on l'exécute
@@ -19,7 +20,7 @@ opkg -d ram install git
 ln -s /tmp/usr/bin/git /usr/bin/git
 ```
 
-puis cloner avec un github ssh mais en RAM pour commencer !
+puis cloner avec un github ssh en RAM:
 ```
 cd /tmp
 git clone git@github.com:zuzu59/mango.git
@@ -29,5 +30,13 @@ source ./alias
 ash ./env_git_a_zuzu.sh
 ```
 
+ou cloner avec un github ssh sur la clef USB FLASH:
+```
+cd /mnt/sda1
+git clone git@github.com:zuzu59/mango.git
+cd mango
 
+source ./alias
+ash ./env_git_a_zuzu.sh
+```
 
