@@ -1,15 +1,16 @@
 #!/bin/ash
 # Petit script pour installer Tailscale facilement en semi-automatique
 #
-# zf230322.1928, zf230404.1357
+# zf230322.1928, zf230404.1405
 
 echo ""
 read -p "Attention il faut se trouver dans le dossier 'tailscale' !"
-read -p "Vous êtes certains ?"
+read -p "Etes-vous certains ?"
 echo ""
 
 /etc/init.d/tailscale stop
 
+opkg update
 opkg install kmod-tun iptables-nft
 
 cp -r ./etc/ /
