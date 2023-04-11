@@ -1,7 +1,7 @@
 #!/bin/ash
 # Petit script pour installer un mini routeur MANGO facilement
 #
-# zf230327.1616, zf230405.1052
+# zf230327.1616, zf230411.1423
 
 # installation des outils de base minimum
 opkg update
@@ -14,8 +14,8 @@ block detect | uci import fstab
 uci set fstab.@mount[0].enabled='1' && uci set fstab.@global[0].anon_mount='1' && uci commit fstab
 /etc/init.d/fstab boot
 
-# installation des outils intéressants (SFTP, Relayd)
-opkg install openssh-sftp-avahi-service luci-proto-relay
+# installation des outils intéressants (SFTP, Relayd, Upgrade Attended Sysupgrade)
+opkg install openssh-sftp-avahi-service luci-proto-relay luci-app-attendedsysupgrade
 
 
 echo -e "
