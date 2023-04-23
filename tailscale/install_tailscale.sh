@@ -1,7 +1,11 @@
 #!/bin/ash
 # Petit script pour installer Tailscale facilement en semi-automatique
 #
-# zf230322.1928, zf230404.1405
+# zf230322.1928, zf230423.1438
+
+TAILSCALE_VERSION='tailscale_1.38.4_mipsle'
+
+
 
 echo ""
 read -p "Attention il faut se trouver dans le dossier 'tailscale' !"
@@ -18,14 +22,14 @@ cp -r ./etc/ /
 mkdir bin
 cd bin
 
-wget https://pkgs.tailscale.com/stable/tailscale_1.38.2_mipsle.tgz
-tar -zxvf tailscale_1.38.2_mipsle.tgz
+wget https://pkgs.tailscale.com/stable/$TAILSCALE_VERSION.tgz
+tar -zxvf $TAILSCALE_VERSION.tgz
 
 rm -f /usr/sbin/tailscale
-ln -s /mnt/sda1/mango/tailscale/bin/tailscale_1.38.2_mipsle/tailscale /usr/sbin/tailscale
+ln -s /mnt/sda1/mango/tailscale/bin/$TAILSCALE_VERSION/tailscale /usr/sbin/tailscale
 
 rm -f /usr/sbin/tailscaled
-ln -s /mnt/sda1/mango/tailscale/bin/tailscale_1.38.2_mipsle/tailscaled /usr/sbin/tailscaled
+ln -s /mnt/sda1/mango/tailscale/bin/$TAILSCALE_VERSION/tailscaled /usr/sbin/tailscaled
 
 /etc/init.d/tailscale start
 /etc/init.d/tailscale enable
