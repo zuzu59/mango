@@ -1,9 +1,9 @@
 #!/bin/ash
 # Petit script pour installer Tailscale facilement en semi-automatique
 #
-# zf230322.1928, zf230423.1438
+# zf230322.1928, zf230920.1501
 
-TAILSCALE_VERSION='tailscale_1.38.4_mipsle'
+TAILSCALE_VERSION='tailscale_1.48.2_mipsle'
 
 
 
