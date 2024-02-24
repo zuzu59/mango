@@ -1,9 +1,10 @@
 #!/bin/ash
 # Petit script pour installer Tailscale facilement en semi-automatique
 #
-# zf230322.1928, zf230920.1501
+# zf230322.1928, zf230920.1501, zf240224.1839
 
-TAILSCALE_VERSION='tailscale_1.48.2_mipsle'
+#TAILSCALE_VERSION='tailscale_1.48.2_mipsle'
+TAILSCALE_VERSION='tailscale_1.60.0_mipsle'
 
 
 
@@ -34,8 +35,9 @@ ln -s /mnt/sda1/mango/tailscale/bin/$TAILSCALE_VERSION/tailscaled /usr/sbin/tail
 /etc/init.d/tailscale start
 /etc/init.d/tailscale enable
 
-tailscale up
-#tailscale up --advertise-routes=192.168.0.0/24 --accept-routes --advertise-exit-node --netfilter-mode=off
+#tailscale up
+tailscale up --advertise-routes=192.168.0.0/24 --accept-routes --advertise-exit-node --netfilter-mode=off
+#tailscale up --advertise-routes=192.168.0.0/24,192.168.58.0/24 --accept-routes --advertise-exit-node --netfilter-mode=off
 
 echo -e "
 
