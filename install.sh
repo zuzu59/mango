@@ -1,11 +1,11 @@
 #!/bin/ash
 # Petit script pour installer un mini routeur MANGO facilement
 #
-# zf230327.1616, zf230411.1423, zf240224.1813
+# zf230327.1616, zf230411.1423, zf240403.1338
 
 # installation des outils de base minimum
 opkg update
-opkg install tree htop nano-full
+opkg install tree htop nano-full bash
 
 # installation et configuration du montage de la clef USB automatiquement lors du boot
 opkg install block-mount e2fsprogs kmod-fs-ext4 kmod-usb-storage kmod-usb2 kmod-usb3 usbutils gdisk kmod-usb-storage-uas
