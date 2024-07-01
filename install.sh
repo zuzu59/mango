@@ -1,7 +1,7 @@
 #!/bin/ash
 # Petit script pour installer un mini routeur MANGO facilement
 #
-# zf230327.1616, zf230411.1423, zf240701.1428
+# zf230327.1616, zf230411.1423, zf240701.1433
 
 # installation des outils de base minimum
 opkg update
@@ -17,7 +17,7 @@ uci set fstab.@mount[0].enabled='1' && uci set fstab.@global[0].anon_mount='1' &
 # installation des outils intéressants (SFTP, Relayd, Upgrade Attended Sysupgrade)
 # opkg install openssh-sftp-avahi-service luci-proto-relay luci-app-attendedsysupgrade dbus
 
-installation des outils intéressants (Upgrade Attended Sysupgrade)
+# installation des outils intéressants (Upgrade Attended Sysupgrade)
 opkg install luci-app-attendedsysupgrade
 
 # configuration du réflecteur mDNS
