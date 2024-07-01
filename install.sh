@@ -17,6 +17,9 @@ uci set fstab.@mount[0].enabled='1' && uci set fstab.@global[0].anon_mount='1' &
 # installation des outils intéressants (SFTP, Relayd, Upgrade Attended Sysupgrade)
 # opkg install openssh-sftp-avahi-service luci-proto-relay luci-app-attendedsysupgrade dbus
 
+installation des outils intéressants (Upgrade Attended Sysupgrade)
+opkg install luci-app-attendedsysupgrade
+
 # configuration du réflecteur mDNS
 #sed -i -e "s/enable-reflector\=no/enable-reflector\=yes/g" /etc/avahi/avahi-daemon.conf
 #/etc/init.d/dbus start
